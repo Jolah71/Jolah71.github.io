@@ -30,8 +30,8 @@ $(function () {
     // toggleGrid();
 
 
+
     // TODO 2 - Create Platforms
-createPlatform(x, y);
 createPlatform(1050,250);
 createPlatform(750,350);
 createPlatform(550,450);
@@ -40,13 +40,11 @@ createPlatform(150,650);
 
 
     // TODO 3 - Create Collectables
-createCollectables(x,y);
 createCollectables()
 
 
     
     // TODO 4 - Create Cannons
-createCannon(x, y);
 createCannon(700,750);
 createCannon(0,250);
 createCannon(1400,500);
