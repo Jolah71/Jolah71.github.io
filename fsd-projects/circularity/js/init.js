@@ -50,7 +50,23 @@ var init = function (window) {
         }
 
 
-
+        // TODO 4 : Update the position of each circle using physikz.updatePosition()
+        for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i];
+            physikz.updatePosition(circle, 1, 1); // Update the position of each circle
+        }
+        // TODO 5 : Call game.checkCirclePosition() on your circles
+        for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i];
+            game.checkCirclePosition(circle); // Check if the circle is off screen
+        }
+        // TODO 6 : Draw each circle using drawCircle()
+        for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i];
+            drawCircle(circle.x, circle.y, circleRadius, circle.fill); // Redraw each
+            circle
+        }   
+            
         // TODO 7 : Use a loop to create multiple circles
         for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
