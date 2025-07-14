@@ -33,19 +33,21 @@ toggleGrid()
     // TODO 2 - Create Platforms
 createPlatform(50,150,200,20,"purple");
 createPlatform(200,250,200,20,"orange");
-createPlatform(400,550,200,20,"green");
+createPlatform(450,570,200,20,"green");
 createPlatform(550,350,200,20,"blue");
 createPlatform(650,700,200,20,"red");
 
 
     // TODO 3 - Create Collectables
-createImageCollectables(400,400);
+createCollectables("diamond",400,400,0.5,0.7);
+createCollectables("coin",100,100,0.5,0.7); 
+createCollectables("steve",600,600,0.5,0.7);
 
-
-    
     // TODO 4 - Create Cannons
-createImageCannon(550,720);
-createImageCannon(0,400);
+createCannon(screenLeft,300,500);
+createCannon(screenTop,0,400);
+createCannon(screenRight,300,500);
+
 
     
     
