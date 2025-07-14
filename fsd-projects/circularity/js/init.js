@@ -47,6 +47,7 @@ var init = function (window) {
             var color = physikz.getRandomColor();
             circle = drawCircle(x, y, circleRadius, color);
             circles.push(circle);
+            drawCircle(5);
         }
 
 
@@ -54,6 +55,12 @@ var init = function (window) {
         for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
             physikz.updatePosition(circle, 1, 1); // Update the position of each circle
+            game.checkCirclePosition(circle); // Check if the circle is off screen
+            physikz.updatePosition(/* bracket notation to access the first circle */);
+            physikz.updatePosition(/* bracket notation to access the second circle */);
+            physikz.updatePosition(/* bracket notation to access the third circle */);
+            physikz.updatePosition(/* bracket notation to access the fourth circle */);
+            physikz.updatePosition(/* bracket notation to access the fifth circle */);`
         }
         // TODO 5 : Call game.checkCirclePosition() on your circles
         for (var i = 0; i < circles.length; i++) {
