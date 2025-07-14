@@ -20,6 +20,7 @@ var init = function (window) {
         ///////////////////
         
         // TODO 1 : Declare and initialize our variables
+        var circle;
         var circles = [],
         circle,
         circleCount = 10, // Number of circles to create    
