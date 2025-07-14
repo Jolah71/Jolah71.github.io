@@ -35,16 +35,17 @@ createPlatform(50,150,200,20);
 createPlatform(200,250,200,20);
 createPlatform(400,500,200,20);
 createPlatform(550,350,200,20);
-createPlatform(650,550,200,20);
+createPlatform(650,700,200,20);
 
 
     // TODO 3 - Create Collectables
-//createCollectables(400.400.)
+createImageCollectables(400,400);
 
 
     
     // TODO 4 - Create Cannons
-createCannon(400,0);
+createImageCannon(550,720);
+createImageCannon(0,400);
 
     
     
