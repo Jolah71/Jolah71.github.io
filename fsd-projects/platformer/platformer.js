@@ -44,9 +44,9 @@ createCollectables("coin", 100, 100,0.5, 0.75);
 createCollectables("steve", 600, 600);
 
     // TODO 4 - Create Cannons
-createCannon("Left", 300, 500);
-createCannon("Top", 0, 400);
-createCannon("Right", 300, 500);
+createCannonImage("Left", 300, 500);
+createCannonImage("Top", 0, 400);
+createCannonImage("Right", 300, 500);
 
 
   
