@@ -34,7 +34,7 @@ toggleGrid()
 createPlatform(50,150,200,20);
 createPlatform(200,250,200,20);
 createPlatform(500,450,200,20);
-createPlatform(450,350,200,20);
+createPlatform(550,350,200,20);
 createPlatform(750,550,200,20);
 
 
