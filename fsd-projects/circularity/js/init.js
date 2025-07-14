@@ -59,6 +59,11 @@ var init = function (window) {
         for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
             game.checkCirclePosition(circle); // Check if the circle is off screen
+            game.checkCirclePosition(/* bracket notation to access the first circle */);
+game.checkCirclePosition(/* bracket notation to access the second circle */);
+game.checkCirclePosition(/* bracket notation to access the third circle */);
+game.checkCirclePosition(/* bracket notation to access the fourth circle */);
+game.checkCirclePosition(/* bracket notation to access the fifth circle */);
         }
         // TODO 6 : Draw each circle using drawCircle()
         for (var i = 0; i < circles.length; i++) {
@@ -66,7 +71,7 @@ var init = function (window) {
             drawCircle(circle.x, circle.y, circleRadius, circle.fill); // Redraw each
             circle
         }   
-            
+
         // TODO 7 : Use a loop to create multiple circles
         for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
