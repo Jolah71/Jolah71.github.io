@@ -67,8 +67,11 @@
 
 			// TODO 2 - Variable declarations 
 		var boxPositionX = 0; // The current X-Coordinate of the box
-
-
+		var boxPositionX = boxPositionX + 10; // The new X-Coordinate of the box
+		var boxSpeed = 10; // The speed at which the box moves
+		var points = 0; // The current points total
+		var boxDirection = 1; // The direction the box is moving (1 for right, -1 for left)
+			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
