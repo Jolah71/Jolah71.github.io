@@ -20,19 +20,42 @@ var init = function (window) {
         ///////////////////
         
         // TODO 1 : Declare and initialize our variables
+        var circles = [],
+        circle,
+        circleCount = 10, // Number of circles to create    
+        circleRadius = 20; // Radius of each circle
 
 
 
-        // TODO 2 : Create a function that draws a circle 
+        // TODO 2 : Create a function that draws a circle
+        function drawCircle(x, y, radius, color) {
+            var circle = draw.circle(radius, color);
+            circle.x = x;
+            circle.y = y;
+            view.addChild(circle);
+            return circle;
+        }
+
         
 
 
         // TODO 3 : Call the drawCircle() function
+        for (var i = 0; i < circleCount; i++) {
+            var x = Math.random() * canvas.width;
+            var y = Math.random() * canvas.height;
+            var color = physikz.getRandomColor();
+            circle = drawCircle(x, y, circleRadius, color);
+            circles.push(circle);
+        }
 
 
 
         // TODO 7 : Use a loop to create multiple circles
-
+        for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i];
+            physikz.updatePosition(circle, 1, 1); // Update the position of each circle
+            game.checkCirclePosition(circle); // Check if the circle is off screen
+        }   
 
 
 
@@ -47,13 +70,19 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-
+            for (var i = 0; i < circles.length; i++) {
+                var circle = circles[i];
+                physikz.updatePosition(circle, 1, 1); // Update the position of each circle
+            }
             
             // TODO 5 : Call game.checkCirclePosition() on your circles
-           
+            for (var i = 0; i < circles.length; i++) {
+                var circle = circles[i];
+                game.checkCirclePosition(circle); // Check if the circle is off screen
+            }   
 
             // TODO 8 / TODO 9 : Iterate over the array
-           
+            
             
         }
     
@@ -70,7 +99,10 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+            // if the circle has gone past the LEFT side of the screen then place it on the RIGHT
+            else if ( circle.x < 0 ) {
+                circle.x = canvas.width;
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////

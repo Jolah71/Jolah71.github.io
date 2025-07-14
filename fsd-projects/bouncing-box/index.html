@@ -93,15 +93,31 @@
 				moveBoxTo(boxPositionX); // Move the box to the new position
 
 				// TODO 4 - Check if the box is off the screen
-				
+				handleBoxClick
+				if (boxPositionX < 0 || boxPositionX > boardWidth - 70) {
+					boxDirection *= -1; // Reverse direction if off screen
 				
 			};
 
-			/* 
-			This Function will be called each time the box is clicked. Each time it is called,
-			it should increase the points total, increase the speed, and move the box to
-			the left side of the screen.
-			*/
+			// TODO 5 - Update the box text to show points
+			changeBoxText(points); // Update the box text to show points
+				// TODO 6 - Reverse direction if off screen
+				if (boxPositionX < 0 || boxPositionX > boardWidth - 70) {
+					boxDirection *= -1; // Reverse direction if off screen
+				}
+				moveBoxTo(boxPositionX); // Move the box to the new position
+			// TODO 7 - Move the box to the new position						
+				moveBoxTo(boxPositionX); // Move the box to the new position
+			// TODO 8 - Update the box text to show points
+				changeBoxText(points); // Update the box text to show points
+			// TODO 9 - Reverse direction if off screen
+				if (boxPositionX < 0 || boxPositionX > boardWidth - 70) {
+				}
+			
+			//This Function will be called each time the box is clicked. Each time it is called,
+			//it should increase the points total, increase the speed, and move the box to
+			//the left side of the screen.
+			//*
 			function handleBoxClick() {
 				
 
