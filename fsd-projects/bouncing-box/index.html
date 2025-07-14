@@ -71,7 +71,7 @@
 		var boxSpeed = 10; // The speed at which the box moves
 		var points = 0; // The current points total
 		var boxDirection = 1; // The direction the box is moving (1 for right, -1 for left)
-			
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -81,9 +81,19 @@
 				moveBoxTo(200);
 				
 			// TODO 3 - Update the box position
-			moveBoxTo(boardWidth); // Moves box to right edge
-			moveBoxTo(400);
-			var box = box += 10; // Adds 10 to variableName
+			handleBoxClick
+				boxPositionX += 0 * boxDirection; // Update the box position based on speed and direction
+				changeBoxText(points); // Update the box text to show points
+			
+				// Check if the box is off the screen
+				if (boxPositionX < 0 || boxPositionX > boardWidth - 70) {
+					boxDirection *= -1; // Reverse direction if off screen
+				}
+
+				moveBoxTo(boxPositionX); // Move the box to the new position
+
+				// TODO 4 - Check if the box is off the screen
+				
 				
 			};
 
