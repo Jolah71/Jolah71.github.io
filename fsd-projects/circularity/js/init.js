@@ -80,8 +80,11 @@ var init = function (window) {
                 var circle = circles[i];
                 game.checkCirclePosition(circle); // Check if the circle is off screen
             }   
-
-            // TODO 8 / TODO 9 : Iterate over the array
+            // TODO 6 : Draw each circle using drawCircle() 
+            for (var i = 0; i < circles.length; i++) {
+                var circle = circles[i];
+                drawCircle(circle.x, circle.y, circleRadius, circle.fill); // Redraw each circle
+            } 
             
             
         }
