@@ -45,7 +45,7 @@ createCollectable("grace",600,600);
 
     // TODO 4 - Create Cannons
 createCannon("left",300,900);
-createCannon("top",300,500);
+createCannon("top",300,1200);
 createCannon("right",300,900);
 
 
