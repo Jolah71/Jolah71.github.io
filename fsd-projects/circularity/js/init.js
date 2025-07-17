@@ -23,10 +23,6 @@
             circle.y = y;
             circle.fill = black;
             return circle;
-            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas, 5, 5);
-            view.addChild(circle);
-            circles.push(circle);
         }
 
 
@@ -72,11 +68,7 @@
         }
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 25; i++) {
-            // You can add code here to create circles if needed
-        }
-
-        // End of makeGame function
+        for (var i = 0; i < 100; i++) {
     };
 
     // End of init function
@@ -89,3 +81,4 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = init;
 }
+    }
