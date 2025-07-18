@@ -93,7 +93,7 @@
   }
 
   .sidebar-img {
-   width: 150px;
+  width: 150px;
   height: 150px;
   clip-path: circle(50%);
   object-fit: cover;
