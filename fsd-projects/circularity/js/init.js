@@ -17,12 +17,11 @@
         var circles = []; // variable to store all circles 
 
         // TODO 2 : Create a function that draws a circle
-        function drawCircle {
+        function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
             circles.push(circle);
-            
             return circle;
         }
 
@@ -30,26 +29,17 @@
 
 
         // TODO 3 : Call the drawCircle() function
-        for (var i = 0; i < circleCount; i++) {
-            var x = Math.random() * canvas.width;
-            var y = Math.random() * canvas.height;
-            var color = physikz.getRandomColor();
-            circle = drawCircle(x, y, circleRadius, color);
-            circles.push(circle);
-           drawCircle(5);
+        function drawCircle(x, y, radius, color) {
+            drawCircle(5);
         }
+       drawCircle(50, 50, 5, purple)
 
-
-        // TODO 4 : Update the position of each circle using physikz.updatePosition()
-        for (var i = 0; i < circles.length; i++) {
-            var circle = circles[i];
-            physikz.updatePosition(circle, 1, 1); // Update the position of each circle
-            game.checkCirclePosition(circle); // Check if the circle is off screen
-            physikz.updatePosition( /* bracket notation to access the first circle */);
-            physikz.updatePosition( /* bracket notation to access the second circle */);
-            physikz.updatePosition( /* bracket notation to access the third circle */);
-            physikz.updatePosition( /* bracket notation to access the fourth circle */);
-            physikz.updatePosition( /* bracket notation to access the fifth circle */);
+        //TODO 4 : Update the position of each circle using physikz.updatePosition()
+        function updateCirclesPosition() {
+            for (var i = 0; i < circles.length; i++) {
+                physikz.updatePosition(circles[i]);
+                game.checkCirclePosition(circles[i]);
+            }
         }
         // TODO 5 : Call game.checkCirclePosition() on your circles
         for (var i = 0; i < circles.length; i++) {
@@ -62,7 +52,7 @@
             game.checkCirclePosition( /* bracket notation to access the fifth circle */);
         }
         // TODO 6 : Draw each circle using drawCircle()
-        for (var i = 0; i < circles.length; i++) {
+          for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
             drawCircle(circle.x, circle.y, circleRadius, circle.fill); // Redraw each
             circle;
@@ -82,4 +72,4 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = init;
 }
-    }
+}
