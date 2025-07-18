@@ -13,7 +13,7 @@
         // PROGRAM SETUP //
         ///////////////////
         // TODO 1 : Declare and initialize our variables
-        var circle; // variable to hold a single circle when creating circles / iterating
+        var circle = draw.randomCircleInArea(canvas, true, true, true); // variable to hold a single circle when creating circles / iterating
         var circles = []; // variable to store all circles in an array
 
         // TODO 2 : Create a function that draws a circle
@@ -21,7 +21,8 @@
             var circle = draw.circle(radius, color);
             circle.x = x;
             circle.y = y;
-            circle.fill = black;
+            circle.fill = color;
+            
             return circle;
         }
 
@@ -35,7 +36,7 @@
             var color = physikz.getRandomColor();
             circle = drawCircle(x, y, circleRadius, color);
             circles.push(circle);
-           //drawCircle(5);
+           drawCircle(5);
         }
 
 
