@@ -14,14 +14,14 @@
         ///////////////////
         // TODO 1 : Declare and initialize our variables
         var circle = draw.randomCircleInArea(canvas, true, true, true); // variable to hold a single circle when creating circles / iterating
-        var circles = []; // variable to store all circles in an array
+        var circles = []; // variable to store all circles 
 
         // TODO 2 : Create a function that draws a circle
-        function drawCircle(x, y, radius, color) {
-            var circle = draw.circle(radius, color);
-            circle.x = x;
-            circle.y = y;
-            circle.fill = color;
+        function drawCircle {
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
+            view.addChild(circle);
+            circles.push(circle);
             
             return circle;
         }
