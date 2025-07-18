@@ -1,75 +1,76 @@
-    function init(window) {
-    'use strict';
-    var
-        draw = window.opspark.draw, physikz = window.opspark.racket.physikz, app = window.opspark.makeApp(), canvas = app.canvas, view = app.view, fps = draw.fps('#000');
+function init(window) {
+  "use strict";
+  var draw = window.opspark.draw,
+    physikz = window.opspark.racket.physikz,
+    app = window.opspark.makeApp(),
+    canvas = app.canvas,
+    view = app.view,
+    fps = draw.fps("#000");
 
+  window.opspark.makeGame = function () {
+    window.opspark.game = {};
+    var game = window.opspark.game;
 
-    window.opspark.makeGame = function () {
+    ///////////////////
+    // PROGRAM SETUP //
+    ///////////////////
+    // TODO 1 : Declare and initialize our variables
+    var circle = draw.randomCircleInArea(canvas, true, true, true); // variable to hold a single circle when creating circles / iterating
+    var circles = []; // variable to store all circles
 
-        window.opspark.game = {};
-        var game = window.opspark.game;
+    // TODO 2 : Create a function that draws a circle
+    function drawCircle() {
+      circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+      physikz.addRandomVelocity(circle, canvas, 5, 5);
+      view.addChild(circle);
+      circles.push(circle);
+      return circle;
+    }
 
-        ///////////////////
-        // PROGRAM SETUP //
-        ///////////////////
-        // TODO 1 : Declare and initialize our variables
-        var circle = draw.randomCircleInArea(canvas, true, true, true); // variable to hold a single circle when creating circles / iterating
-        var circles = []; // variable to store all circles 
+    // TODO 3 : Call the drawCircle() function
+    for (var i = 0; i < 100; i++) {
+    drawCircle();
+    }
 
-        // TODO 2 : Create a function that draws a circle
-        function drawCircle() {
-            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas, 5, 5);
-            view.addChild(circle);
-            circles.push(circle);
-            return circle;
-        }
+    //TODO 4 : Update the position of each circle using physikz.updatePosition()
+    function update() {
+      for (var i = 0; i < circles.length; i++) {
+        physikz.updatePosition(circles[i]);
+        game.checkCirclePosition(circles[i]);
+      }
+    }
 
-
-
-
-        // TODO 3 : Call the drawCircle() function
-        function drawCircle(x, y, radius, color) {
-            drawCircle(5);
-        }
-       drawCircle(50, 50, 5, purple)
-
-        //TODO 4 : Update the position of each circle using physikz.updatePosition()
-        function updateCirclesPosition() {
-            for (var i = 0; i < circles.length; i++) {
-                physikz.updatePosition(circles[i]);
-                game.checkCirclePosition(circles[i]);
-            }
-        }
-        // TODO 5 : Call game.checkCirclePosition() on your circles
-        for (var i = 0; i < circles.length; i++) {
-            var circle = circles[i];
-            game.checkCirclePosition(circle); // Check if the circle is off screen
-            game.checkCirclePosition( /* bracket notation to access the first circle */);
-            game.checkCirclePosition( /* bracket notation to access the second circle */);
-            game.checkCirclePosition( /* bracket notation to access the third circle */);
-            game.checkCirclePosition( /* bracket notation to access the fourth circle */);
-            game.checkCirclePosition( /* bracket notation to access the fifth circle */);
-        }
-        // TODO 6 : Draw each circle using drawCircle()
-          for (var i = 0; i < circles.length; i++) {
-            var circle = circles[i];
-            drawCircle(circle.x, circle.y, circleRadius, circle.fill); // Redraw each
-            circle;
-        }
-
-        // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 100; i++) {
+    // TODO 5 : Call game.checkCirclePosition() on your circles
+    game.checkCirclePosition = function (circle) {
+      // Example implementation: wrap circles to the other side if they go off screen
+      if (circle.x < 0) circle.x = canvas.width;
+      if (circle.x > canvas.width) circle.x = 0;
+      if (circle.y < 0) circle.y = canvas.height;
+      if (circle.y > canvas.height) circle.y = 0;
     };
+view.addChild(fps);
+        app.addUpdateable(fps);
+        
+        game.circle = circle;
+        game.circles = circles;
+        game.drawCircle = drawCircle;
+        game.update = update;
+        
+        app.addUpdateable(window.opspark.game);
+    
+
+    // TODO 7 : Use a loop to create multiple circles
+    
 
     // End of init function
-}
+  };
 
-
-// DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-    (typeof process.versions.node !== 'undefined')) {
+  // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
+  if (
+    typeof process !== "undefined" &&
+    typeof process.versions.node !== "undefined"
+  ) {
     // here, export any references you need for tests //
     module.exports = init;
-}
+  }
 }

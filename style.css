@@ -49,6 +49,8 @@
             }
             .sidebar img {
                 width: 200px;
+                height: 200px;
+                border-radius: 50%;
             }
             .content {
                 flex: 1;
@@ -93,10 +95,7 @@
   }
 
   .sidebar-img {
-  width: 150px;
-  height: 150px;
-  clip-path: circle(50%);
-  object-fit: cover;
+  width: 100;
   }
 
   p,
